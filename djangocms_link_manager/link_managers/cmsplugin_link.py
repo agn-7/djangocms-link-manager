@@ -2,7 +2,10 @@
 
 from __future__ import unicode_literals
 
-from django.core.urlresolvers import NoReverseMatch
+try:
+    from django.core.urlresolvers import NoReverseMatch
+except ImportError:
+    from django.urls import reverse
 
 from ..link_manager import LinkManager, LinkReport
 
